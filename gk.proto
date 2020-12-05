@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "glasskatserver";
+
+package gk;
+
+service GkCoordinates {
+	rpc RequestCoord (stream RequestModel) returns (ReplyModel);
+}
+
+message RequestModel {
+	double X = 1; 
+	double Y = 2;
+}
+
+message ReplyModel {
+	string Text = 1;
+}
+
